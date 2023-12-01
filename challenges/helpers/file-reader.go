@@ -2,13 +2,14 @@ package helpers
 
 import (
 	"bufio"
+	"log"
 	"os"
 )
 
-func ReadLines(path string) ([]string, error) {
-	file, error := os.Open(path)
-	if error != nil {
-		return nil, error
+func ReadLines(path string) []string {
+	file, err := os.Open(path)
+	if err != nil {
+		log.Fatalf("opening file error: %s", err)
 	}
 	defer file.Close()
 
@@ -17,5 +18,9 @@ func ReadLines(path string) ([]string, error) {
 	for scanner.Scan() {
 		lines = append(lines, scanner.Text())
 	}
-	return lines, scanner.Err()
+
+	if scanner.Err() != nil {
+		log.Fatalf("readLines error: %s", scanner.Err())
+	}
+	return lines
 }

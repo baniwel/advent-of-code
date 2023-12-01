@@ -9,19 +9,12 @@ import (
 )
 
 func RunPart1(path string) {
-	lines, err := helpers.ReadLines(path)
-	if err != nil {
-		log.Fatal("readLines error: %s", err)
-	}
-
+	lines := helpers.ReadLines(path)
 	fmt.Println("Sum is", calcSumOfLines(lines))
 }
 
 func RunPart2(path string) {
-	lines, err := helpers.ReadLines(path)
-	if err != nil {
-		log.Fatal("readLines error: %s", err)
-	}
+	lines := helpers.ReadLines(path)
 
 	numbersMapping := map[string]string{"one": "o1e", "two": "t2o", "three": "th3ee", "four": "f4r", "five": "f5e", "six": "s6x", "seven": "s7n", "eight": "e8t", "nine": "n9e"}
 	keys := helpers.MapKeys(numbersMapping)
