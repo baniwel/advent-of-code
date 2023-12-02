@@ -1,6 +1,9 @@
 package helpers
 
-import "strconv"
+import (
+	"log"
+	"strconv"
+)
 
 func IsNumber(value string) bool {
 	if _, err := strconv.ParseInt(value, 10, 64); err == nil {
@@ -8,6 +11,14 @@ func IsNumber(value string) bool {
 	}
 
 	return false
+}
+
+func ParseNumber(value string) int {
+	parsedInt, err := strconv.Atoi(value)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return parsedInt
 }
 
 func Sum(arr []int64) int64 {
