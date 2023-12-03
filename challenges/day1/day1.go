@@ -3,8 +3,6 @@ package day1
 import (
 	"advent-of-code/challenges/helpers"
 	"fmt"
-	"log"
-	"strconv"
 	"strings"
 )
 
@@ -29,8 +27,8 @@ func RunPart2(path string) {
 	fmt.Println("Sum is", calcSumOfLines(lines))
 }
 
-func calcSumOfLines(lines []string) int64 {
-	var numbers []int64
+func calcSumOfLines(lines []string) int {
+	var numbers []int
 	for _, line := range lines {
 		var firstNumber, lastNumber string
 
@@ -48,11 +46,7 @@ func calcSumOfLines(lines []string) int64 {
 			}
 		}
 
-		var fullNumber, err = strconv.ParseInt(firstNumber+lastNumber, 0, 64)
-		if err != nil {
-			log.Fatal("Can't parse int")
-		}
-
+		var fullNumber = helpers.ParseNumber(firstNumber + lastNumber)
 		numbers = append(numbers, fullNumber)
 	}
 

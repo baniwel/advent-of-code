@@ -21,10 +21,26 @@ func ParseNumber(value string) int {
 	return parsedInt
 }
 
-func Sum(arr []int64) int64 {
-	var sum int64 = 0
+func Sum(arr []int) int {
+	var sum = 0
 	for idx := 0; idx < len(arr); idx++ {
 		sum += arr[idx]
 	}
 	return sum
+}
+
+func Min(value1 int, value2 int) int {
+	if value1 > value2 {
+		return value2
+	} else {
+		return value1
+	}
+}
+
+func Max(value1 int, value2 int) int {
+	if value1 > value2 {
+		return value1
+	} else {
+		return value2
+	}
 }

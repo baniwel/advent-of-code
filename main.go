@@ -1,10 +1,9 @@
 package main
 
 import (
-	"advent-of-code/challenges/day2"
+	"advent-of-code/challenges/day3"
 )
 
 func main() {
-	day2.RunPart1("./challenges/inputs/day2-input.txt", 12, 13, 14)
-	day2.RunPart2("./challenges/inputs/day2-input.txt")
+	day3.RunPart2("./challenges/inputs/day3-input.txt")
 }
