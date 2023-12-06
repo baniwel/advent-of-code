@@ -21,6 +21,14 @@ func ParseNumber(value string) int {
 	return parsedInt
 }
 
+func ParseNumbers(values []string) []int {
+	var intValues []int
+	for _, value := range values {
+		intValues = append(intValues, ParseNumber(value))
+	}
+	return intValues
+}
+
 func Sum(arr []int) int {
 	var sum = 0
 	for idx := 0; idx < len(arr); idx++ {
